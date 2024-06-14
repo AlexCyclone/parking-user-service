@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    show-sql: true
+eureka:
+  client:
+    enabled: false
+env:
+  aws:
+    access: PLACEHOLDER
+    secret: PLACEHOLDER
+    region: eu-central-1
+    bucket: PLACEHOLDER
+  jwt:
+    secret: JWT_SECRET_LONGER_THAN_256_BITS_PLACEHOLDER
+    expiration: 86400

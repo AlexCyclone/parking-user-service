@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://${env.postgres.host}:5432/parking_db
+    username: ${env.postgres.username}
+    password: ${env.postgres.password}
+  jpa:
+
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: users
+        hbm2ddl:
+          create_namespaces: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${env.eureka.host}:8761/eureka/
+
+security:
+  open-endpoints:
+    - /auth/**
+    - /actuator/**
+    - /api-docs/**
+    - /swagger-ui/**
+  jwt:
+    secret-key: ${env.jwt.secret}
+    expiration-time-seconds: ${env.jwt.expiration}
+aws:
+  s3:
+    access: ${env.aws.access}
+    secret: ${env.aws.secret}
+    region: ${env.aws.region}
+    bucket: ${env.aws.bucket}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+  api-docs:
+    path: /api-docs

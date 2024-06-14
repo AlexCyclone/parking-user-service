@@ -1,0 +1,17 @@
+server.port: 8010
+spring:
+  jpa:
+    show-sql: true
+eureka:
+  client:
+    enabled: false
+env:
+  jwt:
+    expiration: 86400
+  postgres:
+    host: user-postgres
+  eureka:
+    host: localhost
+  kafka:
+    bootstrap:
+      host: localhost
